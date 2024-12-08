@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my little pony my little pony ah ah ah ahy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #000000; 
+            color: 	#f4a7bb; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: 	#f4a7bb; 
+        }
+
+        p {
+            color: #e0e0f0; /* Soft white for text */
+        }
+
+        button {
+            background-color: #f4a7bb ; /* Coral background */
+            color: #000000; /* Navy blue text */
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #f4a7bb; /* Slightly darker coral */
+            transform: scale(1.1); /* Zoom on hover */
+        }
+
+        img {
+            border-radius: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+
+        .step {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            opacity: 1;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(0);
+        }
+
+        .hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            img {
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Step 1 -->
+    <div id="step1" class="step">
+        <h1>Hi, are you Jacob Zuber?</h1>
+        <br>
+        <button onclick="handleYes()">Yes</button>
+        <button onclick="handleNo()">No</button>
+    </div>
+
+    <!-- Step 2 -->
+    <div id="step2" class="step hidden">
+        <img src="/Users/irisbergquist/Library/Mobile Documents/com~apple~CloudDocs/IMG_6981.JPG" alt="doggy">
+        <h1>Verify Your Birthday to make sure that you are my papi</h1>
+        <p>Enter your birthday:</p>
+        <input type="date" id="birthdayInput" style="padding: 10px; font-size: 16px; border: 1px solid #ddd; border-radius: 5px;">
+        <br>
+        <button onclick="verifyBirthday()">Verify</button>
+    </div>
+
+    <!-- Step 3 -->
+    <div id="step3" class="step hidden">
+        <h1>There you are, my little donkey.</h1>
+        <img src="/Users/irisbergquist/Library/Mobile Documents/com~apple~CloudDocs/IMG_9310.jpeg" alt="Littledonkey">
+        <br>
+        <button onclick="showAnniversary()">Next</button>
+    </div>
+
+    <!-- Step 4 -->
+    <div id="step4" class="step hidden">
+        <h1>Happy 3 Years Anniversary!</h1>
+        <img src="/Users/irisbergquist/Downloads/images.jpeg" alt="Celebration">
+        <br>
+        <button onclick="showMessage()">Next</button>
+    </div>
+
+    <!-- Step 5 -->
+    <div id="step5" class="step hidden">
+        <p style="font-size: 18px; line-height: 1.6;">
+            I just wanted to say that I am very lucky to have you in my life and I am grateful for everything you do.
+            You make my heart feel happy in every single moment. Thank you for being so kind and gentle with me.
+            Even when I am not nice sometimes but you still keep calm and be nice to me.
+            3 years is a lot for me and I am hoping to be with you long long forever T^T. <br><br>
+            <strong>I love you much, papi T^T</strong>
+        </p>
+        <img src="/Users/irisbergquist/Library/Mobile Documents/com~apple~CloudDocs/IMG_8571.JPG" alt="Happy Couple">
+    </div>
+
+    <script>
+        function handleYes() {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+        }
+
+        function handleNo() {
+            alert("Get the fuck out of here!");
+            document.body.innerHTML = ""; // Clear the page
+        }
+
+        function verifyBirthday() {
+            const birthdayInput = document.getElementById('birthdayInput').value;
+            const correctBirthday = "2000-06-11"; // Use YYYY-MM-DD format for <input type="date">
+
+            if (birthdayInput === correctBirthday) {
+                document.getElementById('step2').classList.add('hidden');
+                document.getElementById('step3').classList.remove('hidden');
+            } else {
+                alert("That's not correct. Get the fuck out of here!");
+                document.body.innerHTML = ""; // Clear the page
+            }
+        }
+
+        function showAnniversary() {
+            document.getElementById('step3').classList.add('hidden');
+            document.getElementById('step4').classList.remove('hidden');
+        }
+
+        function showMessage() {
+            document.getElementById('step4').classList.add('hidden');
+            document.getElementById('step5').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
